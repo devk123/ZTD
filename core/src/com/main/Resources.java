@@ -1,6 +1,8 @@
 package com.main;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
 
 public class Resources {
@@ -55,4 +57,23 @@ public class Resources {
 	//TODO: EFFECTS
 	static Texture boom = new Texture(Gdx.files.internal("boom.png"));
 	static Texture click = new Texture(Gdx.files.internal("click_effect.png"));
+
+	//TODO: METHODS
+	//creates a texture of a provided solid color
+	static Texture create_texture(Color color){
+		Pixmap p = new Pixmap(1, 1, Pixmap.Format.RGBA8888);
+		p.setColor(color);
+		p.fillRectangle(0, 0, 1, 1);
+		return new Texture(p);
+	}
+
+	//creates an inverted color given a parameter
+	static Color inverse_color(Color color){
+		return new Color(
+				1f - color.r,
+				1f - color.g,
+				1f - color.b,
+				1f
+		);
+	}
 }

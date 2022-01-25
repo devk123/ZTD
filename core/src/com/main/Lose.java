@@ -8,7 +8,7 @@ public class Lose extends Scene{
     mButton m1;
 
     Lose(){
-        m1 = new mButton("back", (1024/2) - (mButton.bw / 2), 325, mButton.bw, mButton.bh);
+        m1 = new mButton("back", (1024/2) - (mButton.bw / 2), 325, mButton.bw, mButton.bh, Color.DARK_GRAY);
     }
 
     void tap(int x, int y){
